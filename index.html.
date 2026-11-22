@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DO IT</title>
+<style>
+body{margin:0;background:#100d20;color:white;font-family:Arial;padding:25px}
+h1{color:#b99aff}
+input,button{padding:13px;border:0;border-radius:10px;margin:5px}
+input{width:65%}
+button{background:#9b70ff;color:white}
+.task{background:#211b35;padding:15px;margin:10px 0;border-radius:10px}
+</style>
+</head>
+<body>
+<h1>DO IT.</h1>
+<p>Your day. Your goals. Your control.</p>
+<h2>My Tasks</h2>
+<input id="taskInput" placeholder="Enter a task">
+<button onclick="addTask()">Add</button>
+<div id="tasks"></div>
+<script>
+function addTask(){
+let input=document.getElementById("taskInput");
+if(!input.value.trim())return;
+let task=document.createElement("div");
+task.className="task";
+task.textContent="✓ "+input.value;
+document.getElementById("tasks").appendChild(task);
+input.value="";
+}
+</script>
+</body>
+</html>
